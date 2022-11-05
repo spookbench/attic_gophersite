@@ -1,0 +1,205 @@
+!Sharp X68000 Super
+
+@@@@@@@@@
+@ Specs @
+@@@@@@@@@
+
+> Full name...:  Sharp X68000 Super CZ-604C
+> Release date:  1987 (first model) 1991 ("Super" model)
+> CPU.........:  Hitachi HD68HC000 10MHz (m68k clone)
+> RAM.........:  2MB (expandable to 12MB)
+> Storage.....:  two 5.25" floppy drives (with soft eject buttons!), SCSI HDD
+> Sound.......:  YM2151 FM 8 channel chip (used in many arcade boards)
+> IO..........:  Two I/O expansion slots
+
+
+@@@@@@@@@@@@@
+@ Backround @
+@@@@@@@@@@@@@
+
+This is definitely a computer I had on my dream list for a long time. Designed
+to be a powerful home game machine running games in an arcade quality + a fully
+fledged workstation, it wasn't as widely spread as, let's say, a PC-98. Due to
+notoriously bad PSUs and a few design quirks (that we will get to shortly)
+obtaining a fully working unit is very hard. Our today's guest was also listed
+as junk, not powering up, and the seller reported it "emits a weird, salty fish
+smell", which of course hints at the capacitors.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ Overview and disassembly @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+IFront view	main_front.jpg
+
+Sharp went with a very interesting design, sporting two vertical towers,
+connected internally by the daughterboard placed at the bottom, in the base of
+the computer. I call them "analog" and "digital" towers, since the left one
+contains the PSU, drives and the internal speaker, while the other houses the
+main motherboard, video daughterboard and the I/O expansion slots.
+
+There are a few noteworthy things here - soft power button, proprietary 
+keyboard and mouse ports. I don't own those, I have seen a few keyboards for
+sale on Yahoo Auctions Japan, but they cost nearly as much as the computer
+itself and a mouse is pretty much unobtainable. Thankfully, there are DIY
+adapters (for PS/2 and USB) for it, so making them will be a part of this
+restoration project for sure. On the top there are two buttons, reset and...
+interrupt? Yes, from what I've found, it generates a non-maskable interrupt.
+What for?
+
+ITop view	interrupt.jpg
+
+Overall, visually the unit is in a very nice condition aside of a few shallow
+scratches near the base. And dusty. So very, very dusty.
+
+IBack view	main_back.jpg
+
+There's a lot of going on the back - we of course see some similar stuff,
+RS-232, audio jacks, RGB video output, SCSI port, printer... but the rest? 
+Wild stuff. Here are the ports:
+
+> STEREOSCOPIC - It allows to plug in some kind of funky 3D glasses.
+IStereoscopic 3D glasses	3d.png
+> TV CONTROL, REMOTE - Sharp made a line of special monitors, designed to work
+with X68k. As far as I understand, they could be controlled by the computer
+itself and by the special remote[1]. I don't have either of those, so can't 
+test it.
+> SEE THROUGH COLOR, IMAGE IN - Genlock? Prolly, cool!
+
+On the top left there are two I/O slots, covered by those two pieces of metal.
+They allow you to plug expansion cards like additional RAM or MIDI boards
+without the need of opening the computer. And that's an awesome thing, because
+opening this machine up is... not the easiest thing in the world.
+
+Sides of the case slide backwards and then you can take it off, but you need to
+be careful, because there are some retaining clips holding the front cover and
+side panels together, so you need to give them a gentle push first.
+ 
+
+@@@@@@@@@@@@@@@@@@@@@@@@@
+@ The power supply unit @
+@@@@@@@@@@@@@@@@@@@@@@@@@
+
+As I mentioned, the PSUs in X68000 are bad. Some people say it's due to the
+(innovative back in the day) soft power reset, some say it just has low quality
+capacitors... I haven't looked into it yet so what do I know? Well, one thing 
+I do know, is that this unit has a very unhappy, blown fuse:
+
+IPower supply unit - blown fuse	psu.jpg
+
+But is that all? In the bottom right corner of the photo you can see some 
+brown gunk. In fact, that part of the board is covered in it:
+
+IPower supply - side view	psu2.jpg
+
+All of this plus of course the fact that I am in Europe, so I would need 
+a step-down transformer to even plug it in makes me think the PSU is not 
+really worth it and I'll be better off just replacing it with the Pico PSU
+altogether. There is a neat adapter board on Github that allows you to put 
+in place of the original PSU, so it should look fine. While I am waiting for
+the board to arrive, I could look into the old PSU and try to get it working,
+but no promises.
+
+@@@@@@@@@@@@@@@@@
+@ Floppy drives @
+@@@@@@@@@@@@@@@@@
+
+Not gonna go into them right now, since I have no way to test them anyway. 
+I @hope@ they work, since because of the additional signals for the soft-eject
+mechanism, I've heard they are a big pain to replace/emulate. Let's go back 
+to them later, when I will be able to power on the computer.
+
+IFDD front	fdd_front.jpg
+IFDD back	fdd_back.jpg
+
+@@@@@@@@@@@@@@@@@@@
+@ The motherboard @
+@@@@@@@@@@@@@@@@@@@
+
+After peeling layers upon layers of RF shielding, I managed to take 
+the main board out:
+
+IX68000 motherboard	main_board.jpg
+
+So, what do we have here?
+In the top left corner we of course can see the socketed CPU and the CMOS DMA
+controller underneath.
+There's also quite a lot of memory sprinkled throughout the board, most of it
+in SIP packages - 2MB of general memory, VRAM and SRAM that holds computer
+settings and some additional drivers.
+Long, black slot on the right is where the adapter for I/O expansion cards is 
+connected, it looks like this:
+
+II/O expansion slot chassis	io.jpg
+
+Small, white connector near the left edge is where the video daughterboard
+plugs in.
+
+IVideo daughterboard	video_board.jpg
+
+It's not particularly interesting, just some analog stuff. Most of the video
+generation and conversion happens on the main board by the VIPS custom chip 
+and Sony CX20206 RGB converter[2] (IC 51, right under the VIPS).
+
+Speaking of custom ICs, Sharp made quite a few of them, as they are the main
+reason behind X68k's stunning graphical capabilities. I'm still in the process
+of going through the documentation, but so far I know that:
+
+> As I said earlier, VIPS is the main video controller
+> VICON (it still annoys me that this isn't the actual video controller,
+I mean, it's in the name!) - the "CRT controller", something to do with these
+dedicated Sharp monitors I mentioned earlier?
+> Cynthia is a dedicated sprite controller (fun fact, in the original model,
+they didn't manage to fit all Cynthia's logic into one IC, so it was splitted
+into two of them, Cynthia and Cynthia junior - pic from wikimedia
+ICynthia jr.	cynthiajr.jpg
+> Cathy ("Reserve" in old models) - is a "video data selector", interfacing
+the video RAM, ensuring access to the correct part of it (graphics/text/
+sprites)
+> Messiah - probably my favourite name out of all custom chips. All English 
+sources just state it's a "system controller", but nothing else. DMA 
+controller? Maybe? Will need to look at the schematics.
+> Ohm2 - a memory controller. Not much to say about it, besides the fact that 
+in the original model it was called "ET" and in the Pro model they renamed it 
+to... mcCoy? Like Leonard mcCoy from Star Trek? Huh.
+
+There is one more custom IC, PEDEC. It's an I/O controller that lives on 
+the daugherboard located on the bottom of the computer, connecting both towers 
+together:
+
+IBottom daughterboard	base_board.jpg
+
+Big Zilog branded IC on the left is the serial controller, next to it is the 
+floppy drive controller, NEC D72065[3]. Small square chip on the left is the 
+Fujitsu MB89352 SCSI controller[4].
+
+The chip a the bottom with unreadable markings is NEC 8255 PPI[5], here 
+working as a printer controller.
+
+Right above it are three sound chips, Yamaha YM2151 (FM), Yamaha YM3012 (DAC), 
+Oki MSM6258V (Pulse-Code Modulation) and finally a peripheral controller, 
+Motorola 68901.
+
+@@@@@@@@@@@@@@@@
+@ What's next? @
+@@@@@@@@@@@@@@@@
+
+As I said, the power supply is dead and I can't do much. Right now I'm waiting 
+for JLC to send me the adapter board for the Pico PSU and the GAL-based RAM 
+expansion I've found on Github, god bless open hardware. And after that? I 
+don't see any corrosion, broken traces or anything like that, so I hope it will 
+turn on after putting in a new PSU and recapping all boards. If yes, then I 
+will have to make an adapter for a keyboard, test the drives, get a SCSI2SD for 
+it... If I am not so lucky then well, we will see. As long as all custom ICs 
+are okay, it should be repairable. Stay tuned for that!
+
+Links:
+h[1] GamesX - Monitor remote	URL:https://gamesx.com/wiki/doku.php?id=x68000:go555sa_monitor_remote_
+h[2] AllDatasheet.com - Sony CX20206	URL:https://www.alldatasheet.com/datasheet-pdf/pdf/46572/SONY/CX20206.html
+h[3] AllDatasheet.com - NEC D72065	URL:https://datasheetspdf.com/pdf/500683/NEC/UPD72065/1
+h[4] DatasheetPDF.com - MB89352 	URL:https://datasheetspdf.com/datasheet/MB89352.html
+h[5] AllDatasheet.com - NEC 8255 PPI 	URL:https://www.alldatasheet.com/datasheet-pdf/pdf/119077/NEC/UPD8255A.html
+
+1Up next - X68k restoration part 0	/computers/x68k/restoration_part_0
+1Back to the attic	/
+
+.
