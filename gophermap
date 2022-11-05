@@ -1,0 +1,56 @@
+!Spook's dusty attic
+
+                                                                   _.._ 
+          +              *                   .    +              .' .-'`
+                                      +                         /  /   .
+                  .                                             |  |
+   *       +  Welcome    .       /$$     /$$     /$$       +    \  '.___.;
+            to the              | $$    | $$    |__/             '._  _.'
+                      /$$$$$$  /$$$$$$ /$$$$$$   /$$  /$$$$$$$      ``
+     *         +     |____  $$|_  $$_/|_  $$_/  | $$ /$$_____/      .
+                      /$$$$$$$  | $$    | $$    | $$| $$
+      )) _           /$$__  $$  | $$ /$$| $$ /$$| $$| $$     .         *
+__   // /_/         |  $$$$$$$  |  $$$$/|  $$$$/| $$|  $$$$$$$
+\_\_((_/___      +   \_______/   \___/   \___/  |__/ \_______/
+     ))  \_\                __                    __      +     .
+     \\     __       __     \_\  __          __   \_\  __   __       __
+  __  ))    \_\     /_/        \/_/         /_/      \/_/   \_\     /_/
+  \_\_((   .-.  \.-./  .-.   .-./  .-.   .-./  .-.   .-\   .-.  \.-./  .-.
+       \\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_// \\_//-\\_//-\\_//-\\_//-\\
+           \__'-'   '-'\  '-'   '-'  /'-'   '-'\__'-'   '-'__/'-'   '-'\__
+            \_\         \__       __/\          \_\       /_/           \_\
+                         \_\     /_/  \__
+                                       \_\
+
+You've found this small, cramped space that's sitting above my "regular"
+home page. *Home* page, the *attic*, get it? Haha, I'll stop now. 
+
+If you are a Wanderer of the Gopherspace, got here by accident and want to
+know a few things about me, you may be interested in a little
+0introduction   introduction.txt
+
+I keep all sorts of things here, from my technical notes about old computers
+to personal ramblings and unfiltered thoughts that aren't suitable
+for the Big Centralized Internet.
+
+1Old computers here     computers
+1Personal phlog phlog
+
+#
+# Print personal gopherspaces
+#
+There may be little ghosts and critters living here with me. 
+If so, you will find them here:
+~
+
+#
+# Real-time configuration output
+#
+Generic information:
+=echo "    server time....: $(date)"
+=echo "    server uptime..: $(uptime | sed 's/.*up *\([^,]*\), .*/\1/')"
+=echo "    server version.: $SERVER_VERSION \"$SERVER_CODENAME\""
+=echo "    server platform: $SERVER_ARCH"
+=echo "    description....: $SERVER_DESCRIPTION"
+
+.
