@@ -27,14 +27,14 @@ home page. *Home* page, the *attic*, get it? Haha, I'll stop now.
 
 If you are a Wanderer of the Gopherspace, got here by accident and want to
 know a few things about me, you may be interested in a little
-0introduction   introduction.txt
+0introduction	introduction.txt
 
 I keep all sorts of things here, from my technical notes about old computers
 to personal ramblings and unfiltered thoughts that aren't suitable
 for the Big Centralized Internet.
 
-1Old computers here     computers
-1Personal phlog phlog
+1Old computers here	computers
+1Personal phlog	phlog
 
 #
 # Print personal gopherspaces
@@ -42,6 +42,11 @@ for the Big Centralized Internet.
 There may be little ghosts and critters living here with me. 
 If so, you will find them here:
 ~
+
+Other places that may be worth checking out:
+1Floodgap Gopher repository 	/	gopher.floodgap.com	70
+hMy interwebz site	URL:http://spookbench.net
+hMy boyfriend's interwebz site (he's cool and smart)	URL:http://polprog.net
 
 #
 # Real-time configuration output
