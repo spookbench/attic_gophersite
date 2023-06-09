@@ -1,0 +1,161 @@
+!X68000Z Show and tell
+
+Today I finally received my X68000Z Hacker's edition unit! I'm going to take
+a quick look at it and post my first impressions here, along with some photos.
+Sorry for the typos and chaotic structure, it's a sorta "write as I go with
+unboxing it" type of post!~
+
+IX68000Z box    x68000z_box.jpg
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ What exactly is X68000Z?  @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+It's a new "mini-console" made by ZUIKI Inc. It's basically a miniaturized
+version of the classic X68000 computer from 1987. Think something like A500 mini
+or those tiny SNES console scalpers were going crazy about, but, as you'll see,
+fancier. 
+
+> But why do you need it, Spook? Don't you already have a "real" X68000?
+
+Yes, I even finally finished fixing it! (Post about it will come out soon as
+well). But I had two reasons to import X68000Z:
+
+1. Software development - I am very interested in writing some code for fun,
+maaaaybe try and create a demo for this platform... and while having a fully
+working, original computer is great, using it as a main development machine can
+be cumbersome, especially because of data transfer times and small amounts of
+RAM. With an easy-to-use mini clone that can interface with SD cards and USB,
+I hope it will be a much smoother experience.
+
+2. Peripherals - I do not own an original keyboard and mouse for X68k, they are
+very custom, pricey, and kinda rare. BUT the X68000Z Hacker's Edition box comes
+with high-quality, faithful USB recreations of both! And since I recently
+hacked together the X68k-USB adapter for my machine, I can use them, instead of
+paying a lot of money for the original ones.
+
+ISize comparison  x68k_comparison.jpg
+
+Speaking of which, let's examine the contents of the box, starting with
+the aforementioned keyboard and mouse.
+
+@@@@@@@@@@@@@@@@@@
+@ What's inside? @
+@@@@@@@@@@@@@@@@@@
+
+> Keyboard
+
+IKeyboard photo keyboard_full.jpg
+
+Oh boy, what a beast. It's high profile, it has huge F keys and the layout is...
+very special. I was somewhat surprised by how heavy and high-quality it felt.
+It's fully mechanical too, cherry red!
+
+IRed switches keyboard_cherry.jpg
+
+It feels really nice to type, but kinda... different? Keys are really high
+(at least compared to my daily driver) and have this U-shaped profile that I am
+not used to. But I can totally see using it on a daily basis. In fact, that's
+what I am doing it now, writing this post on it! There's a switch that lets us
+use it as a regular computer keyboard.
+
+> Mouse
+The same build quality as the keyboard, it feels pretty solid, with four
+buttons and a scroll. And of course, it rocks the most recognizable feature
+of the X68000 - by flipping the switch and removing the top cover, we discover
+it can transform into a fully functional trackball! Pretty neat, huh?
+
+IMouse photo  x68000z-mouse.jpg
+
+@@@@@@@@@@@@
+@ SD cards @
+@@@@@@@@@@@@
+
+For obvious reasons, X68000Z doesn't use 5.25" floppies as his big brother does.
+ The reason being, a 5.25" floppy is almost bigger than the machine itself :D 
+Instead "floppy drives" are now two SD card slots. Hacker's Edition ships with
+three cards - the Human68k OS v1.00 image, and two cards with games, which
+are『グラディウス』 (Gradius) and 『超連射68k ver1.10』 (ChoRenSha68k, it's also
+a space shooter, but somehow with even better music than Gradius IMO). And
+here's probably the cutest part of this post - the SD cards come in adorable,
+floppy-shaped cases, stylized to look just like a real thing. Not gonna lie, it
+got an audible "awww" out of me when I saw it in person. I cannot express just
+how much I love them, just look:
+
+ISD cards	floppies.jpg
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ Manual and extra goodies @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Before we'll look at the machine itself, some smaller things - inside the box,
+we'll find the quick start guide with a cover design being a nod to old X68000
+manuals, along with a fancy notepad and some stickers I am gonna give to all my
+friends:
+
+IManual manual.jpg
+
+IStickers stickers.jpg
+
+INotepad  notepad.jpg
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ Main dish - X68000Z unit @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+As you've seen in the photo from the beginning of the post, it's really tiny
+compared to my X68000 Super. Other than that, the form factor and color scheme
+is the same as the first X68000 model released in 1987 (that's why it's grey
+while the full-size computer isn't, later models were black).
+
+IUnit front x68000z_front.jpg
+
+IUnit back  x68000z_back.jpg
+
+On the front, there are control LEDs, a power button, a volume knob,
+a mini-jack for music, and the SD card slots I mentioned earlier. On the back
+we won't see the myriad of weird ports like in the real computer - it has
+4x USB A ports for peripherals, an HDMI port, USB C for 5V DC power, and,
+surprisingly enough, the UART port! This is gonna be fun later :D
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ Software and boot modes  @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+By default, the unit boots in a direct emulation mode, behaving like a real
+X68000 and waiting for a boot "floppy" with the OS. Put the SD card in and
+a few seconds later it greets us with a desktop:
+
+IHuman68k desktop human68k.jpg
+
+Sadly, this mode doesn't let us use the other two SD cards with games, the OS
+doesn't recognize them. So we have to switch things up - reboot the computer
+and hold the INTERRUPT button on the top of the case, and we'll see
+the settings screen:
+
+ISettings screen  settings.jpg
+
+Other than the boot mode, it lets us change the date, serial terminal baud rate,
+clear SRAM, and some other things. For now, we just want to boot into
+a "launcher mode":
+
+ILauncher screen  launcher.jpg
+
+It breaks the immersion a bit but lets us boot games and custom content from SD
+cards. And it has awesome background music, I need to record/rip it somehow,
+because it SLAPS. Games, at least the ones that come with the system, get
+a very nice card with a description, screenshot and save slots:
+
+IGame screen  game.jpg
+
+@@@@@@@@
+@ Bye! @
+@@@@@@@@
+
+I am honestly far more excited about this than I thought I'll be, first
+impressions are very positive! I will be probably using this thing a lot.
+This UART port is so tempting...
+
+1Back to the attic	/
+
+.
